@@ -10,10 +10,9 @@ const ImageSlider = ({images = [], ...props}) => {
         <div>'
             <div className="wrapper" { ...props}>
                 {
-                    images.map((image, index) => (
+                    images.map((imageUrl, index) => (
                         
-                        <div className="slide" key={index}>
-
+                        <div className="slide" key={index} style={{backgroundImage: `url(${imageUrl})`}}>
                         </div>
                     ) )
                 }
