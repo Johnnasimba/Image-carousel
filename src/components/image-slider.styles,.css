@@ -14,4 +14,5 @@
     flex-shrink: 0;
     background-image: center;
     background-size: cover;   
+    transition: 1000ms all ease-in-out;
 }
