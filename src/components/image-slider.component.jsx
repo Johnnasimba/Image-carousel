@@ -8,6 +8,7 @@ const ImageSlider = ({
     images = [], 
     autoPlay = true,
     autoPlayTime = 3000,
+    children,
     ...props
 }) => {
     const [currentSlide, setCurrentSlide] = useState(0);
@@ -17,7 +18,7 @@ const ImageSlider = ({
             const newSlideIndex = currentSlide >= images.length -1? 0 : currentSlide + 1;
             setCurrentSlide(newSlideIndex)
         }, autoPlayTime)
-        
+
         return () => clearTimeout(timer)
 
     }, [currentSlide])
@@ -36,6 +37,9 @@ const ImageSlider = ({
                                   marginLeft: index === 0 ? `-${currentSlide * 100}%`: undefined
                                   
                                   }}>
+                                <div className="children-wrapper">
+                                    {children}
+                                </div>
                             </div> 
                         ) )
                     }

@@ -12,7 +12,10 @@ function App() {
   return (
     <div className="App">
       {/* <h1>Business meetings</h1> */}
-      <ImageSlider images={[image1, image2, image3, image4, image5, image6]} />
+      <ImageSlider images={[image1, image2, image3, image4, image5, image6]} >
+        <h1>Team work makes the dream work.</h1>
+
+      </ImageSlider>
     </div>
   );
 }
