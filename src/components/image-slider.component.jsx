@@ -14,11 +14,13 @@ const ImageSlider = ({
 
     useEffect(() => {
         const timer = setTimeout(()=>{
-            setCurrentSlide(currentSlide + 1)
+            const newSlideIndex = currentSlide >= images.length -1? 0 : currentSlide + 1;
+            setCurrentSlide(newSlideIndex)
         }, autoPlayTime)
+        
         return () => clearTimeout(timer)
 
-    }, [currentSlide, autoPlayTime])
+    }, [currentSlide])
 
 
     return (
