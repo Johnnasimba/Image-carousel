@@ -2,6 +2,7 @@ import React, { useState, useEffect } from 'react';
 
 
 import './image-slider.styles,.css';
+import Indicator from './indicator/indicator.component';
 
 
 const ImageSlider = ({
@@ -21,30 +22,32 @@ const ImageSlider = ({
 
         return () => clearTimeout(timer)
 
-    }, [currentSlide])
-
+    })
+ 
 
     return (
-        <div>'
             <div className="wrapper" { ...props}>
-                    {
-                        images.map((imageUrl, index) => (
-                            
-                            <div className="slide"
-                             key={index}
-                              style={{
-                                  backgroundImage: `url(${imageUrl})`,
-                                  marginLeft: index === 0 ? `-${currentSlide * 100}%`: undefined
-                                  
-                                  }}>
-                                <div className="children-wrapper">
-                                    {children}
-                                </div>
-                            </div> 
-                        ) )
-                    }
+                {
+                    images.map((imageUrl, index) => (
+                        
+                        <div className="slide"
+                            key={index}
+                            style={{
+                            backgroundImage: `url(${imageUrl})`,
+                            marginLeft: index === 0 ? `-${currentSlide * 100}%`: undefined
+                                
+                     }}> </div>
+                        
+                ))}
+       
+            <div className="gradient">
+                <Indicator currentSlide={currentSlide} amountSlides = {images.length} />
+                <div className="children-wrapper">
+                    {children}
+                </div>
             </div>
-        </div>
+          
+     </div> 
     )
 }
 

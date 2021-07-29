@@ -1,0 +1,17 @@
+
+.indicator-wrapper {
+   display: flex;
+   flex-wrap: nowrap; 
+
+   position: absolute;
+   bottom: 15px;
+   right: 40%;
+}
+.dot {
+    width: 70px;
+    height: 6px;
+    border-radius: 12px;
+    opacity: 0.6;
+    margin: 5px;
+   
+}
