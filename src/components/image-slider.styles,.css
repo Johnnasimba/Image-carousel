@@ -22,4 +22,8 @@
     left: 50%;
     transform: translate(-50%, -50%);
     color: #fff;
+    background: rgb(41, 41, 41);
+    padding-left: 20px;
+    padding-right: 20px;
+    opacity: 0.5;
 }
