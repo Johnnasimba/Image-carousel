@@ -13,11 +13,17 @@ const ImageSlider = ({
     ...props
 }) => {
     const [currentSlide, setCurrentSlide] = useState(0);
+    
+    // 
+    const nextSlide = (slideIndex = currentSlide + 1) => {
+        const newSlideIndex = slideIndex >= images.length? 0 : slideIndex;
+        setCurrentSlide(newSlideIndex)
+    }
 
     useEffect(() => {
+        // Move to next slide after autoPlayTime has passed
         const timer = setTimeout(()=>{
-            const newSlideIndex = currentSlide >= images.length -1? 0 : currentSlide + 1;
-            setCurrentSlide(newSlideIndex)
+           nextSlide()
         }, autoPlayTime)
 
         return () => clearTimeout(timer)
@@ -41,7 +47,7 @@ const ImageSlider = ({
                 ))}
        
             <div className="gradient">
-                <Indicator currentSlide={currentSlide} amountSlides = {images.length} />
+                <Indicator currentSlide={currentSlide} amountSlides = {images.length} nextSlide={nextSlide} />
                 <div className="children-wrapper">
                     {children}
                 </div>
