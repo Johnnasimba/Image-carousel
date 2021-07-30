@@ -8,7 +8,7 @@ import Indicator from './indicator/indicator.component';
 const ImageSlider = ({
     images = [], 
     autoPlay = true,
-    autoPlayTime = 3000,
+    autoPlayTime = 5000,
     children,
     ...props
 }) => {
