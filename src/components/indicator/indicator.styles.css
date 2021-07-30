@@ -13,5 +13,6 @@
     border-radius: 12px;
     opacity: 0.6;
     margin: 5px;
+    cursor: pointer;
     transition: 1000ms all ease-in-out;   
 }
