@@ -1,8 +1,8 @@
 import React, { useState, useEffect } from 'react';
 
 
-import './image-slider.styles,.css';
 import Indicator from './indicator/indicator.component';
+import './image-slider.styles,.css';
 
 
 const ImageSlider = ({
